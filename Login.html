@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Login-Nico </title>
+		<style>
+					#hintergrund {
+						position: absolute;
+						left: 0;
+						top: 0;
+						height: 100%;
+						width: 100%;
+						z-index: -3;
+						background-color: #40FF00 
+					}
+			</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="hintergrund">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#">Döner</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="./index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./list.html">User</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./Login.html">Login <span class="sr-only">(current)</span></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+		<center>
+		<tr><center><h1><i><b><font face="Georgia"><font color=#FFFFFF>Login</font></font>
+		</b></i></h1></center></tr>
+		<br><br><br>
+		<tr><h3><i><b><font face="Georgia"><font color=#FFFFFF>Username:</font></font></b></i></h3><form name="login"><input
+		name="id" type="text"></tr>
+		<br><br>
+		<tr><h3><i><b><font face="Georgia"><font color=#FFFFFF>Password:</font></font></b></i></h3><input name="pass"
+		type="password"></tr><br><br>
+		<tr><center><input type="button" value="Login"
+		onClick="pasuser(this.form)" ></center><center><br>
+		<script>'use strict';alert(ausgabe);</script>
+
+	</body>
+<script language="javascript">
+	<!--//
+	function pasuser(form) {
+		var benutzerListe = ["benutzer0", "benutzer1", "benutzer2", "benutzer3", "benutzer4", "benutzer5"];
+		var passwortListe = ["000", "111", "222", "333", "444", "555"];
+		var isLoginCorrect = false;
+
+		for(var index = 0; index < benutzerListe.length; index = index + 1) {
+			if (form.id.value==benutzerListe[index] && form.pass.value==passwortListe[index]) {
+				isLoginCorrect = true;
+				
+			}
+					console.log(index);
+		}
+
+		if(isLoginCorrect) {
+				alert("Hallo, " + form.id.value );
+				location="Index.html";    
+		} else {
+			alert("Benutzername oder Passwort falsch");
+		}	
+	}
+	//-->
+	
+	var benutzer = 'Benutzer1';
+
+	var benutzerListe = ["benutzer0", "benutzer1", "benutzer2", "benutzer3", "benutzer4", "benutzer5"];
+
+	
+	for(var index = 0; index < benutzerListe.length; index = index + 1) {
+			// console.log(benutzerListe[index]);
+	}
+	
+	var x = []
+	var y = []
+	var z = []
+
+/*
+	var Namenlist = [];
+	var Name = prompt("Wie ist dein Vorname"); 	// Wie ist dein Vorname? -> neues Fenster
+		x.push(Name);  
+	var NachName = prompt("Wie ist dein Nachname"); 	// Wie ist dein Nachname? -> neues Fenster
+	y.push(NachName); 
+	var alter = prompt("Diggi wie izz dei ALDER"); 	
+	z.push(alter); 
+	
+
+
+	if (((alter >= 18) && (alter < 60)) || (Name == "Finn")|| (Name == "Nico") && (alter >= 15)) {
+		console.log('%c Du darfst Whisky kaufen!', 'font-size: 100px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
+	} 
+
+	var xyz = (x + " " + y + " " + z + " Jahr/Jahre alt")
+	benutzerListe.push(xyz); 
+
+	console.log(benutzerListe);
+
+	var isAElter18 			= (alter >= 18);
+	console.log(isAElter18);
+	var isJuengerSechszig	= (alter < 60);
+	console.log(isJuengerSechszig);
+	var isFinn				= (Name == "Finn");
+	console.log(isFinn);
+	var isNicoAndIs15		= (Name == "Nico") && (alter >= 15);
+	console.log(isNicoAndIs15);
+
+	if ((isAElter18 && isJuengerSechszig) || isFinn || isNicoAndIs15) {
+		console.log('%c Du darfst Whisky kaufen!', 'font-size: 100px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
+	} 
+*/
+
+	function istErlaubt(alter, name) {
+		var is18OderAelter = (alter >= 18);
+		var isJüngerAls60 = (alter  < 60);
+		var isFinnFunction = (name == "Finn");
+		var isNicoFunction = (name == "Nico") && (alter >=15);
+	
+		if (is18OderAelter && isJüngerAls60 || isFinnFunction || isNicoFunction) {
+			// if-Abfragen, TODO
+			 console.log(name + ' darf Whisky kaufen!'); // 'font-size: 100px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
+		} else {
+		 	console.log(name + ' darf Kein Whisky kaufen!'); 
+		}
+	}
+	var Test = 
+	istErlaubt(15, "Finn");
+	istErlaubt(16, "Nico");
+	istErlaubt(61, "Schakko");
+
+
+	// return
+	function istAlterErlaubt(alter) {
+		var aelterAls18 = (alter >= 18);
+
+		if (aelterAls18) {
+			return true; 
+		} else {
+		 	return false; 
+		}
+	}
+	
+	var test = istAlterErlaubt(17);
+		
+
+	if (test) {
+		console.log("Ist erlaubt");
+	}
+	else {
+		console.log("Ist nicht erlaubt");
+	}
+
+	
+// 1. Funktion: mit alter als Parameter und alter älter als 17
+// Variablen zuweisen, Bedingungen überprüüfen...
+// 1. Datei kopieren
+// 2. JavaScript in Datei auslagern
+// 18 oder älter
+// 3. prompt: Eingabe des Alters. Wenn Benutzer älter als 17 und jünger als 60, => "Du darfst Whisky kaufen" in Fettschrift.
+</script>
+</body>
+</html>
